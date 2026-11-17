@@ -1,0 +1,39 @@
+services:
+  postulador:
+    build:
+      context: .
+      args:
+        UID: ${UID:-1000}
+    image: postulador-mcp:latest
+    container_name: postulador-mcp
+    restart: unless-stopped
+    environment:
+      MCP_TRANSPORT: streamable-http
+      MCP_HOST: 0.0.0.0
+      MCP_PORT: 8000
+      MCP_ALLOWED_HOSTS: localhost:*,127.0.0.1:*
+    ports:
+      # Solo en tu máquina: el servidor no tiene autenticación, no lo expongas a la red
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./data:/app/data          # perfil.yaml, rubrica.md y postulaciones.db (persisten)
+      - ./salidas:/app/salidas    # CVs generados, visibles en tu carpeta
+    # Modo desarrollo: `docker compose watch`
+    # - Cambias código -> se copia al contenedor y se reinicia (sin reconstruir)
+    # - Cambias requirements.txt -> se reconstruye la imagen (vuelve a correr pip install)
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./postulador
+          target: /app/postulador
+        - action: sync+restart
+          path: ./server.py
+          target: /app/server.py
+        - action: rebuild
+          path: ./requirements.txt
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

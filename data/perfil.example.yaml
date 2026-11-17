@@ -1,0 +1,198 @@
+# =====================================================================
+# PERFIL DE EJEMPLO (datos ficticios)
+# Copia este archivo a data/perfil.yaml y reemplaza los datos por los tuyos.
+# Si data/perfil.yaml no existe, el servidor carga este archivo.
+# Fuente única de verdad: el agente SOLO usa lo que está aquí.
+# Si un formulario pide algo que no está, el agente debe PREGUNTAR, nunca inventar.
+# =====================================================================
+
+personal:
+  nombre: "Ana Pérez"
+  nombre_corto: "Ana Pérez"
+  email: "ana@example.com"
+  telefono: ""
+  ciudad: "Santiago"
+  region: "Región Metropolitana"
+  pais: "Chile"
+  rut: ""
+  links:
+    linkedin: "https://www.linkedin.com/in/ana-perez-example/"
+    github: "https://github.com/ana-perez-example"
+    portafolio: ""
+
+situacion_laboral:
+  estado_actual: "disponible"
+  disponibilidad_inicio: "inmediata"
+  modalidad_preferida: ["remoto", "hibrido"]
+  acepta_presencial: true
+  dispuesto_a_reubicarse: false
+  acepta_remoto_extranjero: true
+  requiere_patrocinio_visa: false
+  pretension_renta:
+    moneda: "CLP"
+    liquido_mensual_min: 1500000
+    liquido_mensual_objetivo: 1800000
+    usd_mensual_remoto_extranjero: 2000
+    respuesta_si_es_texto_libre: "Mi expectativa está en el rango de {min}–{objetivo} líquidos mensuales, abierto a conversar según el paquete total."
+
+idiomas:
+  - idioma: "Español"
+    nivel: "Nativo"
+  - idioma: "Inglés"
+    nivel: "Avanzado"
+    lectura_tecnica: true
+
+educacion:
+  - institucion: "Universidad de Ejemplo"
+    titulo: "Ingeniería Civil Informática"
+    titulo_en: "B.Sc./M.Eng. Computer Science Engineering (6-year program)"
+    inicio: "2016-03"
+    fin: "2022-12"
+    estado: "Titulada"
+    trabajo_destacado: "Tesis sobre clasificación de imágenes con redes convolucionales."
+
+certificaciones:
+  - nombre: "Certificación de Ejemplo en Machine Learning"
+    url: ""
+
+habilidades:
+  lenguajes:
+    Python: 5
+    TypeScript: 3
+    SQL: 4
+  ia_ml:
+    "LLMs / APIs de modelos": 2
+    "RAG": 2
+    "Prompt engineering": 2
+    "Scikit-learn": 3
+    PyTorch: 2
+    Pandas: 4
+  web:
+    FastAPI: 3
+    React: 2
+    Flask: 2
+  datos:
+    PostgreSQL: 3
+    SQLite: 3
+    Airflow: 1
+  cloud_devops:
+    Docker: 3
+    "GitHub Actions": 2
+    AWS: 1
+  otras: ["Git", "Scrum", "Jupyter"]
+
+experiencia:
+  - id: acme_ai
+    empresa: "Acme AI Labs"
+    cargo: "Ingeniera de IA"
+    cargo_en: "AI Engineer"
+    inicio: "2024-03"
+    fin: "actual"
+    tipo: "jornada completa"
+    bullets:
+      - id: a1
+        tags: [llm, agentes, automatizacion]
+        es: "Diseñé un agente basado en LLMs para automatizar la clasificación y respuesta de solicitudes de soporte."
+        en: "Designed an LLM-based agent to automate classification and response of support requests."
+      - id: a2
+        tags: [llm, rag, vector-db]
+        es: "Implementé un sistema RAG con búsqueda semántica sobre PostgreSQL/pgvector para responder preguntas sobre documentación interna."
+        en: "Implemented a RAG system with semantic search on PostgreSQL/pgvector to answer questions over internal documentation."
+      - id: a3
+        tags: [llm, evaluacion, calidad]
+        es: "Definí un conjunto de pruebas de evaluación para medir la calidad de las respuestas y detectar regresiones entre versiones."
+        en: "Defined an evaluation suite to measure answer quality and detect regressions between versions."
+
+  - id: globex
+    empresa: "Globex Software"
+    cargo: "Desarrolladora Backend"
+    cargo_en: "Backend Developer"
+    inicio: "2022-06"
+    fin: "2024-02"
+    tipo: "jornada completa"
+    bullets:
+      - id: g1
+        tags: [backend, api, python]
+        es: "Desarrollé APIs REST con FastAPI y PostgreSQL para una plataforma de gestión de pedidos."
+        en: "Built REST APIs with FastAPI and PostgreSQL for an order management platform."
+      - id: g2
+        tags: [devops, docker, ci]
+        es: "Contenericé los servicios con Docker y automaticé pruebas y despliegues con GitHub Actions."
+        en: "Containerized services with Docker and automated tests and deployments with GitHub Actions."
+      - id: g3
+        tags: [impacto, rendimiento]
+        es: "Optimicé consultas críticas, reduciendo el tiempo de respuesta de los reportes principales."
+        en: "Optimized critical queries, reducing response time for the main reports."
+        revisar_metrica: true
+
+  - id: initech
+    empresa: "Initech Datos"
+    cargo: "Analista de Datos"
+    cargo_en: "Data Analyst"
+    inicio: "2021-01"
+    fin: "2022-05"
+    tipo: "freelance"
+    bullets:
+      - id: i1
+        tags: [ml, clasificacion, datos]
+        es: "Entrené modelos de clasificación con Scikit-learn para priorizar clientes según su probabilidad de compra."
+        en: "Trained classification models with Scikit-learn to prioritize customers by purchase likelihood."
+      - id: i2
+        tags: [datos, etl, airflow]
+        es: "Construí pipelines de datos con Python y Airflow para consolidar fuentes dispersas en un solo repositorio."
+        en: "Built data pipelines with Python and Airflow to consolidate scattered sources into a single repository."
+
+variantes:
+  ai_engineer:
+    titulo: "AI Engineer | LLMs, RAG y agentes"
+    titulo_en: "AI Engineer | LLMs, RAG & Agents"
+    resumen_es: >
+      Ingeniera civil informática enfocada en IA aplicada. Construyo agentes y
+      sistemas con LLMs (RAG, evaluación, automatización) con experiencia de punta
+      a punta, desde los datos hasta el despliegue.
+    resumen_en: >
+      Computer Science engineer focused on applied AI. I build LLM-based agents and
+      systems (RAG, evaluation, automation) with end-to-end ownership from data
+      to deployment.
+    tags_prioritarios: [llm, rag, agentes, evaluacion]
+
+  ml_data:
+    titulo: "Machine Learning Engineer | Modelos y datos"
+    titulo_en: "Machine Learning Engineer | Models & Data"
+    resumen_es: >
+      Ingeniera civil informática con experiencia en modelos de clasificación y
+      pipelines de datos con Python, Scikit-learn y Airflow.
+    resumen_en: >
+      Computer Science engineer experienced in classification models and data
+      pipelines with Python, Scikit-learn and Airflow.
+    tags_prioritarios: [ml, clasificacion, datos, etl]
+
+  ai_backend:
+    titulo: "AI Backend Developer | Python, APIs y LLMs"
+    titulo_en: "AI Backend Developer | Python, APIs & LLMs"
+    resumen_es: >
+      Ingeniera que construye backends para productos con IA: APIs en FastAPI,
+      agentes con LLMs y RAG, desplegados con Docker y CI/CD.
+    resumen_en: >
+      Engineer building backends for AI-powered products: FastAPI APIs, LLM agents
+      and RAG, deployed with Docker and CI/CD.
+    tags_prioritarios: [llm, backend, api, devops]
+    bullets_sugeridos: [a1, a2, g1, g2]
+
+respuestas_tipo:
+  por_que_esta_empresa: "GENERAR por oferta: 2-3 frases conectando la misión/producto de la empresa con mi experiencia concreta. Nunca genérico."
+  por_que_busco_cambio: "Quiero profundizar en IA aplicada y trabajar en un equipo donde sea parte central del producto."
+  proyecto_del_que_estoy_orgulloso: "Un sistema RAG sobre documentación interna, llevado de punta a punta: desde la ingesta de documentos hasta la evaluación de la calidad de las respuestas."
+  fortalezas: "Ownership de punta a punta (datos → modelo → despliegue) y foco en problemas de negocio concretos."
+  autorizado_para_trabajar_en_chile: true
+  dispuesto_a_prueba_tecnica: true
+  como_se_entero_de_la_oferta: "LinkedIn"
+
+filtros:
+  roles_objetivo: ["AI Engineer", "ML Engineer", "LLM Engineer", "Data Scientist"]
+  roles_secundarios: ["Backend Developer", "Data Engineer"]
+  seniority: ["Semi Senior", "Mid"]
+  empresas_excluidas: ["ExampleCorp"]
+  palabras_excluidas: ["prácticas", "práctica profesional", "trainee"]
+  umbral_score: 65
+  max_postulaciones_diarias: 12

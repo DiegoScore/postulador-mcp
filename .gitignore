@@ -1,0 +1,13 @@
+# Datos personales: nunca se suben
+data/perfil.yaml
+data/postulaciones.db
+salidas/*.docx
+salidas/*.pdf
+
+# Entorno y caché
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+graphify-out/
